@@ -22,3 +22,20 @@ body {
     background: url('dino.png') no-repeat center center;
     background-size: contain;
 }
+
+#coco {
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background: url('coco.png') no-repeat center center;
+    background-size: contain;
+}
+
+#score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-size: 24px;
+}

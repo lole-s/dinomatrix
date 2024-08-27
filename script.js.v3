@@ -35,9 +35,6 @@ function createCoco() {
     coco.style.position = 'absolute';
     coco.style.top = '0px';
     coco.style.left = `${Math.random() * canvas.width}px`;
-    coco.style.width = '30px';
-    coco.style.height = '30px';
-    coco.style.backgroundColor = 'brown'; // Color de fondo temporal para pruebas
     document.body.appendChild(coco);
     cocos.push(coco);
 }
