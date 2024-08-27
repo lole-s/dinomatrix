@@ -5,15 +5,14 @@ canvas.height = window.innerHeight;
 
 const letters = Array(256).join(1).split('');
 const dino = document.getElementById('dino');
-const scoreDisplay = document.createElement('div');
-scoreDisplay.id = 'score';
-document.body.appendChild(scoreDisplay);
+const scoreDisplay = document.getElementById('score');
+const livesDisplay = document.getElementById('lives');
 
 let isJumping = false;
 let dinoX = canvas.width / 2;
 let score = 0;
 let speed = 2;
-let missedCocos = 0;
+let lives = 3;
 
 const cocos = [];
 
@@ -51,8 +50,8 @@ function updateCocos() {
         if (cocoY > canvas.height) {
             document.body.removeChild(coco);
             cocos.splice(index, 1);
-            missedCocos++;
-            if (missedCocos >= 3) {
+            lives--;
+            if (lives <= 0) {
                 alert('Game Over');
                 location.reload();
             }
@@ -80,10 +79,15 @@ function updateScore() {
     scoreDisplay.textContent = `Score: ${score}`;
 }
 
+function updateLives() {
+    livesDisplay.textContent = `Lives: ${lives}`;
+}
+
 function gameLoop() {
     drawMatrix();
     updateCocos();
     updateScore();
+    updateLives();
     requestAnimationFrame(gameLoop);
 }
 
