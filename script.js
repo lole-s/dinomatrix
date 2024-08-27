@@ -15,6 +15,8 @@ let speed = 2;
 let lives = 3;
 
 const cocos = [];
+const fireballs = [];
+let fireballActive = false;
 
 function drawMatrix() {
     ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
@@ -39,6 +41,29 @@ function createCoco() {
     coco.style.backgroundColor = 'brown'; // Color de fondo temporal para pruebas
     document.body.appendChild(coco);
     cocos.push(coco);
+}
+
+function createFireball(type) {
+    if (fireballActive) return;
+
+    const fireball = document.createElement('div');
+    fireball.className = 'fireball';
+    fireball.style.position = 'absolute';
+    fireball.style.width = '30px';
+    fireball.style.height = '30px';
+    fireball.style.backgroundColor = 'red'; // Color de fondo temporal para pruebas
+
+    if (type === 'ground') {
+        fireball.style.bottom = '10px';
+        fireball.style.left = `${Math.random() * canvas.width}px`;
+    } else if (type === 'air') {
+        fireball.style.top = '0px';
+        fireball.style.left = `${Math.random() * canvas.width}px`;
+    }
+
+    document.body.appendChild(fireball);
+    fireballs.push({ element: fireball, type: type });
+    fireballActive = true;
 }
 
 function updateCocos() {
@@ -75,6 +100,50 @@ function updateCocos() {
     });
 }
 
+function updateFireballs() {
+    fireballs.forEach((fireball, index) => {
+        if (fireball.type === 'ground') {
+            let fireballX = parseFloat(fireball.element.style.left) || 0;
+            fireballX -= speed;
+            fireball.element.style.left = `${fireballX}px`;
+
+            if (fireballX < 0) {
+                document.body.removeChild(fireball.element);
+                fireballs.splice(index, 1);
+                fireballActive = false;
+            }
+        } else if (fireball.type === 'air') {
+            let fireballY = parseFloat(fireball.element.style.top) || 0;
+            fireballY += speed;
+            fireball.element.style.top = `${fireballY}px`;
+
+            if (fireballY > canvas.height) {
+                document.body.removeChild(fireball.element);
+                fireballs.splice(index, 1);
+                fireballActive = false;
+            }
+        }
+
+        const dinoRect = dino.getBoundingClientRect();
+        const fireballRect = fireball.element.getBoundingClientRect();
+        if (
+            dinoRect.left < fireballRect.left + fireballRect.width &&
+            dinoRect.left + dinoRect.width > fireballRect.left &&
+            dinoRect.top < fireballRect.top + fireballRect.height &&
+            dinoRect.height + dinoRect.top > fireballRect.top
+        ) {
+            document.body.removeChild(fireball.element);
+            fireballs.splice(index, 1);
+            lives--;
+            if (lives <= 0) {
+                alert('Game Over');
+                location.reload();
+            }
+            fireballActive = false;
+        }
+    });
+}
+
 function updateScore() {
     scoreDisplay.textContent = `Score: ${score}`;
 }
@@ -86,6 +155,7 @@ function updateLives() {
 function gameLoop() {
     drawMatrix();
     updateCocos();
+    updateFireballs();
     updateScore();
     updateLives();
     requestAnimationFrame(gameLoop);
@@ -105,11 +175,27 @@ document.addEventListener('keydown', (event) => {
     } else if (event.code === 'ArrowLeft') {
         dinoX -= 20;
         dino.style.left = `${dinoX}px`;
+        if (!isJumping) {
+            dino.style.transition = 'left 0.1s';
+        }
     } else if (event.code === 'ArrowRight') {
         dinoX += 20;
         dino.style.left = `${dinoX}px`;
+        if (!isJumping) {
+            dino.style.transition = 'left 0.1s';
+        }
     }
 });
 
 setInterval(createCoco, 2000);
+setInterval(() => {
+    if (score >= 10 && score < 2000) {
+        if (Math.random() < 0.5) {
+            createFireball('air');
+		} else {
+			createFireball('ground');
+		}
+	}	
+}, 2000);
+
 gameLoop();
