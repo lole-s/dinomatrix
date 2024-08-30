@@ -19,7 +19,7 @@ body {
     transform: translateX(-50%);
     width: 50px;
     height: 50px;
-    background: url('dino.png') no-repeat center center;
+    background: url('./img/dino.png') no-repeat center center;
     background-size: contain;
 }
 
@@ -28,7 +28,7 @@ body {
     top: 0;
     width: 30px;
     height: 30px;
-    background: url('coco.png') no-repeat center center;
+    background: url('./img/coco.png') no-repeat center center;
     background-size: contain;
 }
 
@@ -52,6 +52,6 @@ body {
     position: absolute;
     width: 30px;
     height: 30px;
-    background: url('fireball.png') no-repeat center center;
+    background: url('./img/fireball.png') no-repeat center center;
     background-size: contain;
 }

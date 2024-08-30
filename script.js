@@ -19,10 +19,10 @@ const fireballs = [];
 let fireballActive = false;
 
 // Sonidos
-const collectSound = new Audio('collect.mp3');
-const loseLifeSound = new Audio('lose_life.wav');
-const gainLifeSound = new Audio('gain_life.wav'); // Sonido para ganar una vida
-const backgroundMusic = new Audio('background_music.wav');
+const collectSound = new Audio('./music/collect.mp3');
+const loseLifeSound = new Audio('./music/lose_life.wav');
+const gainLifeSound = new Audio('./gain_life.wav'); // Sonido para ganar una vida
+const backgroundMusic = new Audio('./music/background_music.wav');
 backgroundMusic.loop = true;
 backgroundMusic.play();
 
@@ -52,7 +52,7 @@ function createCoco() {
     coco.style.left = `${(Math.random() * canvas.width) - 30}px`;
     coco.style.width = '30px';
     coco.style.height = '30px';
-    coco.style.backgroundImage = 'url("coco.png")';
+    coco.style.backgroundImage = 'url("./img/coco.png")';
     coco.style.backgroundSize = 'contain';
     coco.style.backgroundRepeat = 'no-repeat';
     document.body.appendChild(coco);
@@ -70,7 +70,7 @@ function createCocoGold() {
     cocoGold.style.left = `${(Math.random() * canvas.width) - 30}px`;
     cocoGold.style.width = '60px';
     cocoGold.style.height = '60px';
-    cocoGold.style.backgroundImage = 'url("coco_gold.png")';
+    cocoGold.style.backgroundImage = 'url("./img/coco_gold.png")';
     cocoGold.style.backgroundSize = 'contain';
     cocoGold.style.backgroundRepeat = 'no-repeat';
     document.body.appendChild(cocoGold);
@@ -91,11 +91,11 @@ function createFireball(type) {
     fireball.style.height = '50px';
 
     if (type === 'ground') {
-        fireball.style.backgroundImage = 'url("fireball_ground.png")';
+        fireball.style.backgroundImage = 'url("./im/fireball_ground.png")';
         fireball.style.bottom = '10px';
         fireball.style.left = `${canvas.width - 30}px`; // Solo desde la derecha
     } else if (type === 'air') {
-        fireball.style.backgroundImage = 'url("fireball_air.png")';
+        fireball.style.backgroundImage = 'url("./im/fireball_air.png")';
         fireball.style.top = '0px';
         fireball.style.left = `${Math.random() * canvas.width}px`;
     }
@@ -240,15 +240,18 @@ document.addEventListener('keydown', (event) => {
                 isJumping = false;
             }, 100);
         }, 1000);
-    } else if (event.code === 'ArrowLeft' && dinoX > 30) {
+    } else if (event.code === 'ArrowLeft' ) {
         dinoX -= 20;
         dino.style.left = `${dinoX}px`;
-    } else if (event.code === 'ArrowRight' && dinoX < (canvas.width-30)) {
+    } else if (event.code === 'ArrowRight') {
         dinoX += 20;
         dino.style.left = `${dinoX}px`;
     }
 });
-
+/*
+    } else if (event.code === 'ArrowLeft' && dinoX > 30) {
+    } else if (event.code === 'ArrowRight' && dinoX < (canvas.width-30)) {
+*/
 
 // Crear cocos cada 2.5 segundos
 setInterval(createCoco, 2500);
