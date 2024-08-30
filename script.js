@@ -87,13 +87,13 @@ function createFireball(type) {
     const fireball = document.createElement('div');
     fireball.className = 'fireball';
     fireball.style.position = 'absolute';
-    fireball.style.width = '50px';
-    fireball.style.height = '50px';
+    fireball.style.width = '40px';
+    fireball.style.height = '40px';
 
     if (type === 'ground') {
-        fireball.style.backgroundImage = 'url("./im/fireball_ground.png")';
+        fireball.style.backgroundImage = 'url("./img/fireball_ground.png")';
         fireball.style.bottom = '10px';
-        fireball.style.left = `${canvas.width - 30}px`; // Solo desde la derecha
+        fireball.style.left = `${canvas.width + 40}px`; // Solo desde la derecha
     } else if (type === 'air') {
         fireball.style.backgroundImage = 'url("./im/fireball_air.png")';
         fireball.style.top = '0px';
