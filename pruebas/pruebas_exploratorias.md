@@ -7,7 +7,6 @@ Las pruebas exploratorias son pruebas manuales donde el tester explora la aplica
 1. **Definir Áreas de Prueba**: Identifica las áreas del juego que deseas explorar.
 2. **Explorar Funcionalidades**: Interactúa con el juego de manera libre, probando diferentes acciones y escenarios.
 3. **Documentar Hallazgos**: Anota cualquier problema o comportamiento inesperado que encuentres.
-4. **Revisar y Corregir**: Analiza los hallazgos y realiza las correcciones necesarias en el código.
 
 ## Ejemplo
 - **Área de Prueba**: Movimiento del dinosaurio.
