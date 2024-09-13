@@ -1,0 +1,6 @@
+# VSC
+.vscode/*
+history/*
+node_modules/*
+test/*
+*.json

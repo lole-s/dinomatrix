@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas Ejes X e Y</title>
+</head>
+<body>
+    <canvas id="miCanvas" width="500" height="500" style="border:1px solid #000;"></canvas>
+    <script>
+        const canvas = document.getElementById('miCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Dibujar eje X
+        ctx.beginPath();
+        ctx.moveTo(0, 250); // Punto inicial (0, 250)
+        ctx.lineTo(500, 250); // Punto final (500, 250)
+        ctx.strokeStyle = 'red';
+        ctx.stroke();
+
+        // Dibujar eje Y
+        ctx.beginPath();
+        ctx.moveTo(250, 0); // Punto inicial (250, 0)
+        ctx.lineTo(250, 500); // Punto final (250, 500)
+        ctx.strokeStyle = 'blue';
+        ctx.stroke();
+    </script>
+</body>
+</html>

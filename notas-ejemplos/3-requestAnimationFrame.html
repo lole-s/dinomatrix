@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animación con requestAnimationFrame</title>
+    <style>
+        #miDiv {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            top: 50px;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="miDiv"></div>
+    <script>
+        let posX = 0;
+        const miDiv = document.getElementById('miDiv');
+
+        function moverDiv(timestamp) {
+            posX += 1; // Incrementa la posición en X
+            miDiv.style.left = posX + 'px'; // Actualiza la posición del div
+
+            // Solicita el siguiente frame
+            requestAnimationFrame(moverDiv);
+        }
+
+        // Inicia la animación
+        requestAnimationFrame(moverDiv);
+    </script>
+</body>
+</html>

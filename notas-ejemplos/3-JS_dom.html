@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manipulación del DOM</title>
+    <script>
+        function cambiarTexto() {
+            var miDiv = document.getElementById("miDiv");
+            miDiv.innerHTML = "<p>Texto cambiado por JavaScript.</p>";
+        }
+    </script>
+</head>
+<body>
+    <div id="miDiv">
+        <p>Texto original dentro del div.</p>
+    </div>
+    <button onclick="cambiarTexto()">Cambiar Texto</button>
+</body>
+</html>
