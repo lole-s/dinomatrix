@@ -10,7 +10,7 @@ En términos simples, el DOM permite que los lenguajes de programación, como Ja
 	
 	- Estilizar elementos: Cambiar los estilos CSS de los elementos.
 
-En tu código, cuando menciono “DOM”, me refiero a la estructura del documento HTML que estás manipulando con JavaScript para crear y controlar los elementos del juego.
+En el código, cuando se menciona “DOM”, se refiere a la estructura del documento HTML que estás manipulando con JavaScript para crear y controlar los elementos del juego.
 
 ### CANVAS: 
 
@@ -51,7 +51,7 @@ Ejemplo básico de un elemento <div>:
 En este ejemplo, el <div> agrupa un título y un párrafo, y la clase contenedor se puede usar para aplicar estilos CSS a este grupo de elementos.
 
 
-En el proyecto DinoMatrix, los elementos <div> se utilizan para crear y manipular varios componentes del juego. Aquí tienes algunos ejemplos específicos de cómo se usan:
+En el proyecto DinoMatrix, los elementos <div> se utilizan para crear y manipular varios componentes del juego. Algunos ejemplos específicos de cómo se usan, son:
 
 1- Cocos y Cocos Dorados:
 	
@@ -109,7 +109,7 @@ Clases CSS: Son utilizadas para aplicar estilos a los elementos HTML. En el cód
 ```
 En resumen, coco.className = 'coco'; simplemente asigna una clase CSS al elemento <div> para que puedas aplicar estilos específicos a ese elemento. No tiene relación con las clases de programación orientada a objetos.
 
-Sin embargo, podrías refactorizarse el código para usar clases y objetos, lo que podría mejorar la organización y la reutilización del código.
+Sin embargo, se podría refactorizar el código para usar clases y objetos, lo que podría mejorar la organización y la reutilización del código.
 
 ```JavaScript
 class Coco {
@@ -134,7 +134,7 @@ const coco = new Coco('normal');
 // Crear un coco dorado
 const cocoGold = new Coco('gold');
 ```
-Este enfoque hace que el código sea más modular y fácil de mantener. Puedes crear instancias de la clase Coco para generar cocos normales y dorados sin duplicar el código.
+Este enfoque hace que el código sea más modular y fácil de mantener. Se pueden crear instancias de la clase Coco para generar cocos normales y dorados sin duplicar el código.
 
 ____
 
@@ -224,7 +224,8 @@ frutas.push('Naranja');
 console.log(frutas); // Imprime ['Manzana', 'Banana', 'Durazno', 'Naranja']
 ```
 
-Uso de Arrays en DinoMatrix:
+**Uso de Arrays en DinoMatrix:**
+
 En el proyecto DinoMatrix, se utilizan arrays para almacenar los huevos (cocos) y las bolas de fuego:
 
 ```JavaScript
