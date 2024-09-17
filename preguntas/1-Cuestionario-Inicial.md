@@ -1,3 +1,5 @@
+#### Cuestionario Inicial
+
 1. **HTML**:
    - **Pregunta 1**: ¿Cuál es el propósito de la etiqueta `<canvas>` en el archivo HTML del proyecto DinoMatrix?
    - **Pregunta 2**: ¿Cómo se enlaza el archivo JavaScript al documento HTML y en qué parte del documento se encuentra?
