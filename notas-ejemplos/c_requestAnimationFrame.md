@@ -59,3 +59,4 @@ Aquí tienes un ejemplo simple de cómo usar `requestAnimationFrame()` para move
 
 `requestAnimationFrame()` es ideal para crear animaciones fluidas y eficientes en el navegador.
 
+> **nota**: para mayor detalle consultar: https://es.javascript.info/js-animation
