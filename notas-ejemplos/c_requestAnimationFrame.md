@@ -1,10 +1,10 @@
 ### ¿Qué es `requestAnimationFrame()`?
 
-`requestAnimationFrame()` le dice al navegador que deseas realizar una animación y solicita que el navegador programe una actualización de la animación antes del próximo repintado de la pantalla¹². Esto permite que las animaciones se sincronicen con la frecuencia de actualización del monitor, lo que resulta en animaciones más suaves y eficientes en términos de rendimiento.
+`requestAnimationFrame()` le dice al navegador que deseas realizar una animación y solicita que el navegador programe una actualización de la animación antes del próximo repintado de la pantalla. Esto permite que las animaciones se sincronicen con la frecuencia de actualización del monitor, lo que resulta en animaciones más suaves y eficientes en términos de rendimiento.
 
 ### ¿Cómo Funciona?
 
-1. **Solicitud de Animación**: Llamas a `requestAnimationFrame()` y le pasas una función de callback que contiene el código de la animación.
+1. **Solicitud de Animación**: Se llama a `requestAnimationFrame()` y le pasas una función de callback que contiene el código de la animación.
 2. **Callback de Animación**: El navegador llama a esta función antes del próximo repintado. La función recibe un argumento `timestamp` que indica el tiempo actual.
 3. **Repetición**: Dentro de la función de callback, llamas nuevamente a `requestAnimationFrame()` para continuar la animación en el siguiente frame.
 
@@ -57,5 +57,5 @@ Aquí tienes un ejemplo simple de cómo usar `requestAnimationFrame()` para move
 
 ### Resumen
 
-`requestAnimationFrame()` es ideal para crear animaciones fluidas y eficientes en el navegador. Al utilizar esta función, puedes asegurarte de que tus animaciones se ejecuten de manera óptima y sin problemas.
+`requestAnimationFrame()` es ideal para crear animaciones fluidas y eficientes en el navegador.
 
